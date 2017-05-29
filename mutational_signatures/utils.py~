@@ -295,7 +295,7 @@ def plot_atom(dictionary):
     rows = dictionary.shape[0]
 
     # start plot
-    fig = plt.figure(figsize=(15, 5))
+    fig = plt.figure(figsize=(15, 10))
 
     #for k in range(dictionary.shape[0]):
     length = len(dictionary)
@@ -321,14 +321,8 @@ def plot_atom(dictionary):
 
     plt.xlim((0, 96))
     plt.ylim((0, _max))
-    plt.tick_params(
-    axis='x',          # changes apply to the x-axis
-    which='both',      # both major and minor ticks are affected
-    bottom='off',      # ticks along the bottom edge are off
-    top='off',         # ticks along the top edge are off
-    labelbottom='off') 
-#     plt.xticks(bins+patches[0].get_width()/2 , features, rotation='vertical')
-#     rcParams.update({'font.size': 8})
+    plt.xticks(bins+patches[0].get_width()/2 , features, rotation='vertical')
+    rcParams.update({'font.size': 8})
 
     # colors labels
     labels = ["C>A", "C>G", "C>T", "T>A", "T>C", "T>G"]
@@ -339,16 +333,9 @@ def plot_atom(dictionary):
                 patch.set_facecolor(colors[l])
                 break
 
-#     plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc='center',
-#                ncol=6,  mode='expand', borderaxespad=15.,
-#                numpoints=6, fontsize='xx-large')
-    #fig.patch.set_facecolor((0.5, 0.294, 0.294, 0.5))
-    
-
-    matplotlib.rcParams.update({'font.size': 22})
-
-    
-   # plt.rcParams['axes.facecolor'] = (0.294, 0.294, 0.5, 0.3)
+    plt.legend(bbox_to_anchor=(0., 1.02, 1., .102), loc='center',
+               ncol=6,  mode='expand', borderaxespad=15.,
+               numpoints=6, fontsize='xx-large')
     plt.tight_layout()
     plt.subplots_adjust(top=0.94)
     plt.show()
